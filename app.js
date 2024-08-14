@@ -149,3 +149,166 @@ function getMax(arr) {
 console.log(getMax([5, 100, 0]));
 console.log(getMax([12, 10, -20]));
 console.log(getMax([-300, -100, -200]));
+
+// Q8 Reverse a string
+
+// Given a string, return the reserved string
+
+// reverseString('abc') -> cba
+// reverseString('wilkin') -> nikliw
+// reverseString('this is cool') -> looc si siht
+
+// - use an incrementing for loop
+// - use a decrementing for loop
+// - use the array reverse property
+
+
+// incrementing for loop method
+function reverseString(str) {
+    let reverseString = '';
+    for (let i = 0; i < str.length; ++i) {
+        // this is how you loop throught every character in a spring
+        reverseString = str[i] + reverseString
+    }
+    return reverseString;
+}
+
+console.log(reverseString('abc'));
+console.log(reverseString('wilkin'));
+console.log(reverseString('this is cool'));
+
+// decrementing for loop method
+
+function reverseString(str) {
+    let reverseString = '';
+    for ( let i = str.length - 1; i >= 0; --i) {
+        reverseString = reverseString + str[i]
+    }
+    return reverseString;
+}
+
+console.log(reverseString('abc'));
+console.log(reverseString('wilkin'));
+console.log(reverseString('this is cool'));
+
+// array reverse property - how to reverse a string in javascript method
+       
+                      // inside of the console !!!!
+
+                    
+ // how to turn a string into and array inside the javascript console
+
+ // 'abc'.split('')
+ // ['a','b','c']
+
+ // how to reverse a string
+
+ // 'abc'.split('').reversed
+ // ['c','b','a']
+
+ // how to return it into a string
+
+ // 'abc'.split('').reverse().join('')
+ // 'cba'
+
+ // split = converts a str to an array
+ // reverse = reverses an array
+ // join = returns array into a str
+
+
+ function reverseString(str) {
+    return str.split('').reverse().join('');
+ }
+
+ console.log(reverseString('abc'));
+console.log(reverseString('wilkin'));
+console.log(reverseString('this is cool'));
+
+// Q9 Turn every element in an array into 0
+
+// Given an array of elements, return the same length array filled with 0's
+
+// convertToZeros([5, 100. 0]) -> [0, 0, 0]
+// convertToZeros([12]) -> [0]
+// convertToZeros([1, 2, 3, 4, 5]) -> [0, 0, 0, 0, 0]
+
+// - solution 1: for loop
+// - solution 1: array 'fill'
+// - solution 1: array 'map'
+
+// for loop method
+function convertToZeros(arr) {
+    for (let i = 0; i < arr.length; ++i) {
+        arr[i] = 0
+    }
+    return arr;
+}
+
+console.log(convertToZeros([5, 100, 0]));
+console.log(convertToZeros([12]));
+console.log(convertToZeros([1, 2, 3, 4, 5]));
+
+// array 'fill' method
+
+function convertToZeros(arr) {
+    return new Array(arr.length).fill(0);
+}
+
+console.log(convertToZeros([5, 100, 0]));
+console.log(convertToZeros([12]));
+console.log(convertToZeros([1, 2, 3, 4, 5]));
+
+
+// array 'map' method
+
+// map lets you map over every element of an array / change every single element in the array
+// converts and element in your array into something else
+// arr = apples but i want to change them to bananas
+// arr.map(elem => bananas)
+// the apples are now bananas
+
+function convertToZeros(arr) {
+    return arr.map(elem => 0)
+}
+
+console.log(convertToZeros([5, 100, 0]));
+console.log(convertToZeros([12]));
+console.log(convertToZeros([1, 2, 3, 4, 5]));
+
+// Q10 Filter out all the apples
+
+// Given an array of fruits, if it is an apple remove it from an array
+
+// removeApples(['banana', 'apple', orange', 'apple']) -> ['banana', 'orange']
+// removeApples(['tomato', 'orange', 'banana']) -> ['tomato', 'orange', 'banana']
+// removeApples(['banana', 'orange', 'apple']) -> ['banana', 'orange']
+
+// - solution 1: for loop
+// - solution 2: array 'filter'
+
+// for loop method
+function removeApples(arr) {
+    let noApples = []
+    for (let i = 0; i < arr.length; ++i) {
+        if (arr[i] !== 'apple') {
+            // .push adds and element to the end of an array
+            noApples.push(arr[i])
+        }
+    }
+    return noApples;
+}
+
+console.log(removeApples(['banana', 'apple', 'orange', 'apple']));
+console.log(removeApples(['tomato', 'orange', 'banana']));
+console.log(removeApples(['banana', 'orange', 'apple']));
+
+// array 'filter' method
+
+ function removeApples(arr) {
+    return arr.filter(elem => elem !== 'apple')
+ }
+
+console.log(removeApples(['banana', 'apple', 'orange', 'apple']));
+console.log(removeApples(['tomato', 'orange', 'banana']));
+console.log(removeApples(['banana', 'orange', 'apple']));
+

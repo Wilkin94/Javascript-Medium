@@ -312,3 +312,54 @@ console.log(removeApples(['banana', 'apple', 'orange', 'apple']));
 console.log(removeApples(['tomato', 'orange', 'banana']));
 console.log(removeApples(['banana', 'orange', 'apple']));
 
+// Q11. Filter out all the falsy values
+
+// Given an array of values filter out all the falsy values and only return the truthy values
+
+// filterOutFalsy(["", [], 0, undefined, "0"]) -> [[], "0"]
+// filterOutFalsy(['tomato', 'orange', 'banana', 'false']) -> ['tomato', 'orange', 'banana']
+// filterOutFalsy(['banana', 'orange', 'apple']) -> ['banana', 'orange']
+
+// - solution 1: for loop
+// - solution 2: array 'filter'
+
+// for loop method
+function filterOutFalsy(arr) {
+    let truthyArr = []
+    for (let i = 0; i < arr.length; ++i) {
+        if (!!arr[i] === true)
+            truthyArr.push(arr[i])
+    }
+    return truthyArr;
+}
+
+console.log(filterOutFalsy(["", [], 0, null, undefined, "0"]));
+console.log(filterOutFalsy(['tomato', 'orange', 'banana', false]));
+console.log(filterOutFalsy(['banana', 'orange', 'apple']));
+
+// array 'filter' method
+
+function filterOutFalsy(arr) {
+    // convert it to its boolean counterpart use !!.   ex. (elem => !!elem === true)
+    // how to check if its truthy or falsey -> !! ( use double !!)
+    return arr.filter(elem => !!elem === true)
+}
+
+console.log(filterOutFalsy(["", [], 0, null, undefined, "0"]));
+console.log(filterOutFalsy(['tomato', 'orange', 'banana', false]));
+console.log(filterOutFalsy(['banana', 'orange', 'apple']));
+
+
+// Q12. Truthy to true, Falsy to false
+
+// Given an array of truthy and falsy values, return the same array of elements into its boolean value
+
+// convertToBoolean([500, 0, "Wilkin", "", []]) ->[true, false,true, false, true]
+
+// ******** whenever you think of converting every single element use 'map' method !!!!!!!! ********
+
+function convertToBoolean(arr) {
+    return arr.map(elem => !!elem === true)
+}
+
+console.log(convertToBoolean([500, 0, "Wilkin", "", []]));
